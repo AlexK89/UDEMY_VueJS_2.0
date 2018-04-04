@@ -1,7 +1,7 @@
 new Vue({
 	el: '#vue-section',
 	data: {
-		title: 'hello world'
+		title: 'Type any text inside the field'
 	},
 	methods: {
 		changeTitle: function (event) {

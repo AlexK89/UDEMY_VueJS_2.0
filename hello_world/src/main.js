@@ -1,15 +1,17 @@
 new Vue({
 	el: '#vue-section',
 	data: {
-		title: 'Type any text inside the field',
+		input: 'Type any text inside the field',
+		title: 'hi',
 		link: 'http://www.google.com'
 	},
 	methods: {
 		changeTitle: function (event) {
-			this.title = event.target.value;
+			this.input = event.target.value;
 		},
 		sayHello: function () {
-			return 'hello:)'
-		}
+			this.title = 'hello:)';
+			return 'method'
+		},
 	}
 });

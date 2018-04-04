@@ -12,8 +12,14 @@
 		<!-- v-on:input - listener -->
 		<input type="text" v-on:input="changeTitle">
 		<!--v-bind - we use to transform regular attr to vuejs style-->
-		<p>{{title}} <a v-bind:href="link">Google</a></p>
+
+		<p>{{ input }} <a v-bind:href="link">Google</a></p>
+
+		<!--v-once - stop the code to re-write the value-->
+		<p v-once>Title with v-bind: {{ title }}</p>
+		<p>Title without v-bind: {{ title }}</p>
 		<p>We can execute methods and put return value: {{ sayHello() }}</p>
+
 	</div>
 </body>
 <script src="src/vue.js"></script>

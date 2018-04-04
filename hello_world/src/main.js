@@ -2,7 +2,7 @@ new Vue({
 	el: '#vue-section',
 	data: {
 		title: 'Type any text inside the field',
-		link: 'google.com'
+		link: 'http://www.google.com'
 	},
 	methods: {
 		changeTitle: function (event) {

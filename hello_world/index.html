@@ -5,13 +5,14 @@
 	<meta name="viewport"
 		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>VueJS Hello World</title>
 </head>
 <body>
 	<div id="vue-section">
 		<!-- v-on:input - listener -->
 		<input type="text" v-on:input="changeTitle">
-		<p>{{title}}</p>
+		<p>{{title}} <a href="{{ link }}">Google</a></p>
+		<p>We can execute methods and put return value: {{ sayHello() }}</p>
 	</div>
 </body>
 <script src="src/vue.js"></script>

@@ -13,7 +13,8 @@
 	<button v-on:click='increase()'>click me</button>
 	<button v-on:click='increase(2)'>Increase by passing variable</button>
 	<p>{{ counter }}</p>
-	<p v-on:mousemove="randomNum">Coordinates: {{ x }}, {{ y }} - <span v-on:mousemove="deadSpot">Dead spot</span></p>
+	<!--stop - is modifier to skip using method-->
+	<p v-on:mousemove="randomNum">Coordinates: {{ x }}, {{ y }} - <span v-on:mousemove.stop="">Dead spot</span></p>
 </div>
 </body>
 <script src="../vue.js"></script>

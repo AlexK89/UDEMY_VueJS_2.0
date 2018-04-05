@@ -6,13 +6,16 @@ new Vue({
 		y:0
 	},
 	methods: {
-		increase: function() {
-			this.counter++;
+		increase: function(step = 1) {
+			this.counter += step;
 		},
 		randomNum: function (event) {
 			this.x = event.clientX;
 			this.y = event.clientY;
 
+		},
+		deadSpot: function (event) {
+			event.stopPropagation();
 		}
 	}
 });

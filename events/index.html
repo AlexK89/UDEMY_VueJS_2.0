@@ -9,9 +9,11 @@
 </head>
 <body>
 <div id="app">
-	<button v-on:click='increase'>click me</button>
+	<!--If method requires parameter we need to add ()-->
+	<button v-on:click='increase()'>click me</button>
+	<button v-on:click='increase(2)'>Increase by passing variable</button>
 	<p>{{ counter }}</p>
-	<p v-on:mousemove='randomNum'>Coordinates: {{ x }}, {{ y }}</p>
+	<p v-on:mousemove="randomNum">Coordinates: {{ x }}, {{ y }} - <span v-on:mousemove="deadSpot">Dead spot</span></p>
 </div>
 </body>
 <script src="../vue.js"></script>

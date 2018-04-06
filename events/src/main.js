@@ -16,6 +16,24 @@ new Vue({
 		},
 		deadSpot: function (event) {
 			event.stopPropagation();
+		},
+		alertMessage: function () {
+			alert('Submited!');
+		}
+	}
+});
+
+new Vue({
+	el: '#exercise',
+	data: {
+		value: ''
+	},
+	methods: {
+		grebValue: function (event) {
+			this.value = event.target.value;
+		},
+		showAlert: function () {
+			alert('Alert');
 		}
 	}
 });

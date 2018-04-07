@@ -16,8 +16,14 @@
 <div id="app">
 	<!--If method requires parameter we need to add ()-->
 	<button v-on:click='increase()'>click me</button>
+	<!--In places where we have excess to Vue instance we can write valid JS, one expresion limited-->
+	<p class="comment">v-on:click='counter++' - direct JS</p>
+	<button v-on:click='counter++'>click me - with direct JS</button>
 	<button v-on:click='increase(2)'>Increase by passing variable</button>
 	<p>{{ counter }}</p>
+	<hr>
+	<p class="comment">Valid JS in Vue placeholder</p>
+	<p>{{ counter * 2 > 10 ? 'greater then 10' : 'smaller then 10' }}</p>
 	<!--stop - is modifier to skip using method-->
 	<hr>
 	<p class="comment">v-on:mousemove - listen for cursor position while hovering element</p>
@@ -36,13 +42,13 @@
 	<hr>
 	<p class="comment">2) Listen to the "keydown" event and store the value in a data property (hint: event.target.value gives you the value)</p>
 	<div>
-		<input v-on:keyup="grebValue" type="text">
+		<input v-on:keydown="grebValue" type="text">
 		<p>{{ value }}</p>
 	</div>
 	<hr>
 	<p class="comment"> 3) Adjust the example from 2) to only fire if the "key down" is the ENTER key</p>
 	<div>
-		<input v-on:keyup.enter="grebValue" type="text">
+		<input v-on:keydown.enter="grebValue" type="text">
 		<p>{{ value }}</p>
 	</div>
 </div>

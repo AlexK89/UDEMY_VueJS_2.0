@@ -13,13 +13,14 @@
 	</style>
 </head>
 <body>
+<h3>We can use shortcuts as: 'v-on' = '@', 'v-bind' = ':'</h3>
 <div id="app">
 	<!--If method requires parameter we need to add ()-->
-	<button v-on:click='increase()'>click me</button>
+	<button @click='increase()'>click me</button>
 	<!--In places where we have excess to Vue instance we can write valid JS, one expresion limited-->
 	<p class="comment">v-on:click='counter++' - direct JS</p>
-	<button v-on:click='counter++'>click me - with direct JS</button>
-	<button v-on:click='increase(2)'>Increase by passing variable</button>
+	<button @click='counter++'>click me - with direct JS</button>
+	<button @click='increase(2)'>Increase by passing variable</button>
 	<p>{{ counter }}</p>
 	<hr>
 	<p class="comment">Valid JS in Vue placeholder - "counter * 2 > 10 ? 'greater then 10' : 'smaller then 10'"</p>
@@ -27,10 +28,10 @@
 	<!--stop - is modifier to skip using method-->
 	<hr>
 	<p class="comment">v-on:mousemove - listen for cursor position while hovering element</p>
-	<p v-on:mousemove="randomNum">Coordinates: {{ x }}, {{ y }} - <span v-on:mousemove.stop="">Dead spot</span></p>
+	<p @mousemove="randomNum">Coordinates: {{ x }}, {{ y }} - <span @mousemove.stop="">Dead spot</span></p>
 	<hr>
 	<p class="comment">v-on:keyup.enter - listen for presing enter</p>
-	<input type="text" v-on:keyup.enter="alertMessage">
+	<input type="text" @keyup.enter="alertMessage">
 	<hr>
 	<p class="comment">v-model: take a value and update existing one</p>
 	<input type="text" v-model="name">
@@ -40,26 +41,26 @@
 <div id="exercise">
 	<p class="comment">1) Show an alert when the Button gets clicked </p>
 	<div>
-		<button v-on:click="showAlert">Show Alert</button>
+		<button @click="showAlert">Show Alert</button>
 	</div>
 	<hr>
 	<p class="comment">2) Listen to the "keydown" event and store the value in a data property (hint: event.target.value gives you the value)</p>
 	<div>
-		<input v-on:keydown="grebValue" type="text">
+		<input @keydown="grebValue" type="text">
 		<p>{{ value }}</p>
 	</div>
 	<hr>
 	<p class="comment"> 3) Adjust the example from 2) to only fire if the "key down" is the ENTER key</p>
 	<div>
-		<input v-on:keydown.enter="grebValue" type="text">
+		<input @keydown.enter="grebValue" type="text">
 		<p>{{ value }}</p>
 	</div>
 </div>
 <hr>
 
 <div id="app_2">
-	<button v-on:click="increaseCounter">Increase</button>
-	<button v-on:click="decreaseCounter">Decrease</button>
+	<button @click="increaseCounter">Increase</button>
+	<button @click="decreaseCounter">Decrease</button>
 	<p>Counter: {{ counter }}</p>
 	<p>Result: {{ result }}</p>
 </div>
@@ -68,9 +69,9 @@
 <div id="app_3">
 	<h2>App_3</h2>
 	<p>"computed" - Caching the last result and do not runs until related values has been changed</p>
-	<button v-on:click="counter++">Increase</button>
-	<button v-on:click="counter_2++">Increase Second Counter</button>
-	<button v-on:click="counter--">Decrease</button>
+	<button @click="counter++">Increase</button>
+	<button @click="counter_2++">Increase Second Counter</button>
+	<button @click="counter--">Decrease</button>
 	<p>Counter: {{ counter }} | Second counter: {{ counter_2 }}</p>
 	<p>Result computed: {{ output }} | Result method: {{ increaseCounter() }}</p>
 </div>

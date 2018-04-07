@@ -32,6 +32,9 @@
 	<p class="comment">v-on:keyup.enter - listen for presing enter</p>
 	<input type="text" v-on:keyup.enter="alertMessage">
 	<hr>
+	<p class="comment">v-model: take a value and update existing one</p>
+	<input type="text" v-model="name">
+	<p>{{name}}</p>
 </div>
 <h2>Exercise</h2>
 <div id="exercise">
@@ -52,6 +55,7 @@
 		<p>{{ value }}</p>
 	</div>
 </div>
+
 </body>
 <script src="../vue.js"></script>
 <script src="src/main.js"></script>

@@ -79,6 +79,7 @@ new Vue({
 		// property needs to be the same as above to make it change
 		counter(value) {
 			let vueObj = this;
+
 			setTimeout(()=>{
 				vueObj.counter = 0;
 			},5000);
@@ -88,5 +89,31 @@ new Vue({
 		increaseCounter: function () {
 			return this.result = this.counter > 5 ? ('greater then 5: ' + Math.random()) : ('less then 5: ' + Math.random());
 		},
+	}
+});
+
+new Vue({
+	el: '#exercise_2',
+	data: {
+		value: 0,
+		result: ''
+	},
+	computed: {
+		output() {
+			return this.result = this.value === 10 ? 'done' : 'not there yet';
+		}
+	},
+	watch: {
+		result(value) {
+			let vueObj = this;
+
+			if (vueObj.result === 'done') {
+				setTimeout(
+					() => {
+						vueObj.value = 0;
+					}, 3000
+				)
+			}
+		}
 	}
 });

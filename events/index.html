@@ -55,7 +55,25 @@
 		<p>{{ value }}</p>
 	</div>
 </div>
+<hr>
 
+<div id="app_2">
+	<button v-on:click="increaseCounter">Increase</button>
+	<button v-on:click="decreaseCounter">Decrease</button>
+	<p>Counter: {{ counter }}</p>
+	<p>Result: {{ result }}</p>
+</div>
+<hr>
+
+<div id="app_3">
+	<h2>App_3</h2>
+	<p>"computed" - Caching the last result and do not runs until related values has been changed</p>
+	<button v-on:click="counter++">Increase</button>
+	<button v-on:click="counter_2++">Increase Second Counter</button>
+	<button v-on:click="counter--">Decrease</button>
+	<p>Counter: {{ counter }} | Second counter: {{ counter_2 }}</p>
+	<p>Result computed: {{ output }} | Result method: {{ increaseCounter() }}</p>
+</div>
 </body>
 <script src="../vue.js"></script>
 <script src="src/main.js"></script>

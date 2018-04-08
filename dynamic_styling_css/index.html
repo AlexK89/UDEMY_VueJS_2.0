@@ -16,9 +16,14 @@
 			 :class="divColor"
 		></div>
 		<div class="box"></div>
-		<div class="box" :class="color">
+		<div class="box" :class="color" :style="size">
 			<p>Color for third box(defined in css: blue || green)</p>
 			<input type="text" v-model="color">
+			<p>Height and width set by ":style"</p>
+			<label for="width">Width</label>
+			<input type="text" v-model="width" placeholder="width" id="width">
+			<label for="height">Height</label>
+			<input type="text" v-model="height" placeholder="height" id="height">
 		</div>
 	</div>
 	<hr>

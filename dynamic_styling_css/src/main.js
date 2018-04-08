@@ -2,7 +2,9 @@ new Vue({
 	el: '#vue-styling',
 	data: {
 		attachGreen: false,
-		color: ''
+		color: '',
+		width: null,
+		height: null
 	},
 	computed:{
 		divColor() {
@@ -10,6 +12,13 @@ new Vue({
 				'green': this.attachGreen,
 				'blue': !this.attachGreen
 			}
+		},
+		size() {
+			return {
+				width: this.width + 'px',
+				height: this.height + 'px'
+			}
+
 		}
 	}
 });

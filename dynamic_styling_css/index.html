@@ -9,13 +9,20 @@
 	<title>Styling with VueJS</title>
 </head>
 <body>
-<div id="vue-styling" class="container">
-	<div class="box"
-		 @click="attachGreen = !attachGreen"
-		 :class="divColor"
-	></div>
-	<div class="box"></div>
-	<div class="box"></div>
+<div id="vue-styling">
+	<div class="container">
+		<div class="box"
+			 @click="attachGreen = !attachGreen"
+			 :class="divColor"
+		></div>
+		<div class="box"></div>
+		<div class="box" :class="color">
+			<p>Color for third box(defined in css: blue || green)</p>
+			<input type="text" v-model="color">
+		</div>
+	</div>
+	<hr>
+
 </div>
 </body>
 <script src="../vue.js"></script>

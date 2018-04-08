@@ -1,7 +1,8 @@
 new Vue({
 	el: '#vue-styling',
 	data: {
-		attachGreen: false
+		attachGreen: false,
+		color: ''
 	},
 	computed:{
 		divColor() {

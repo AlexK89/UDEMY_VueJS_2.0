@@ -8,6 +8,13 @@
 	width: 200px;
 	background-color: gray;
 	margin: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+	text-align: center;
+	font-style: italic;
 }
 
 .green {

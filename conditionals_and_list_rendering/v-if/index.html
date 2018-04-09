@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style/styles.css">
+	<title>VueJS v-if</title>
+</head>
+<body>
+<div id="app">
+	<p class="comment">Use 'v-if' to sho or hide content</p>
+	<button @click="show = !show">Toggle visibility</button>
+	<p v-if="show">Conditional visibility paragraph</p>
+	<p v-else="show">Now you see this paragraph(v-else statement)</p>
+	<p>visible paragraph</p>
+</div>
+<script src="../../vue.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>

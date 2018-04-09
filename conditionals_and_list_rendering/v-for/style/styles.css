@@ -1,0 +1,23 @@
+* {
+	box-sizing: border-box;
+}
+
+hr {
+	border: none;
+	border-bottom: 1px solid #d0d0d0;
+}
+.comment {
+	font-weight: bold;
+	font-style: italic;
+}
+
+#app {
+	display: flex;
+	justify-content: center;
+}
+.item {
+	width: 90%;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+				0 10px 10px rgba(0,0,0,0.22);
+	padding: 1em;
+}

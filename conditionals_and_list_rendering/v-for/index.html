@@ -15,11 +15,21 @@
 				{{ ingredient }} ({{ i }})
 			</li>
 		</ul>
-		<hr>
+	</div>
+	<div class="item">
 		<p>People</p>
 		<template v-for="(person, i) in persons">
 			<p><b>{{ i+1 }}.</b> Name: {{ person.name }} Age: {{ person.age }} Favorite colour: {{ person.color }}</p>
 		</template>
+	</div>
+	<div class="item">
+		<p class="comment">v-for inside v-for. Looping thought object and getting property and value</p>
+		<ul>
+			<li v-for="(person) in persons">
+				<p v-for="(value, key) in person">{{key}}: {{ value }}</p>
+			</li>
+		</ul>
+
 	</div>
 </div>
 <script src="../../vue.js"></script>

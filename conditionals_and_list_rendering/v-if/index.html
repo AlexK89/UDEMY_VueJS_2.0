@@ -12,6 +12,10 @@
 	<p v-if="show">Conditional visibility paragraph</p>
 	<p v-else="show">Now you see this paragraph(v-else statement)</p>
 	<p>visible paragraph</p>
+	<template v-if="show">
+		<h4>Template Heading</h4>
+		<p>Template paragraph</p>
+	</template>
 </div>
 <script src="../../vue.js"></script>
 <script src="src/main.js"></script>

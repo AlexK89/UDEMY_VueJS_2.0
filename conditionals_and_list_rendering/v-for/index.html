@@ -29,7 +29,10 @@
 				<p v-for="(value, key) in person">{{key}}: {{ value }}</p>
 			</li>
 		</ul>
-
+	</div>
+	<div class="item">
+		<p class="comment">List of numbers: v-for(n of 10)</p>
+		<p><span v-for="n of 10">{{ n }} </span></p>
 	</div>
 </div>
 <script src="../../vue.js"></script>

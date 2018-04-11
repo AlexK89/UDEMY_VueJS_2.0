@@ -22,7 +22,8 @@ new Vue({
 			this.attack(8, 16, 0, 20);
 		},
 		heal() {
-
+			this.playerHealth += this.damageMath(6, 10);
+			this.monsterAttack(0, 12);
 		},
 		resetGame() {
 
@@ -30,14 +31,17 @@ new Vue({
 
 		//supplemental methods
 		attack(playerMin, playerMax, monsterMin, monsterMax) {
-			console.log(playerMin);
 			this.monsterHealth -= this.damageMath(playerMin, playerMax);
 			if (this.checkResult()) {
 				return;
 			}
 
-			this.playerHealth -= this.damageMath(monsterMin, monsterMax);
+			this.monsterAttack(playerMin, playerMax);
 			this.checkResult();
+		},
+		// we use separate method to make it accessible for healing step
+		monsterAttack(monsterMin, monsterMax) {
+			this.playerHealth -= this.damageMath(monsterMin, monsterMax);
 		},
 		damageMath(minDamage, maxDamage) {
 			return Math.max(Math.ceil(Math.random() * maxDamage), minDamage);

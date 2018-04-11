@@ -13,21 +13,27 @@ new Vue({
 		},
 		attack() {
 			this.monsterHealth -= this.damageMath(3, 10);
-			this.playerHealth -= this.damageMath(0, 12);
 
+			if (this.checkResult()) {
+				return;
+			}
+			
+			this.playerHealth -= this.damageMath(0, 12);
 			this.checkResult();
 		},
 		checkResult() {
 			if (this.monsterHealth <= 0) {
 				this.monsterHealth = 0;
 				this.gameRunning = false;
-				
+
 				alert("you win");
+				return true;
 			} else if (this.playerHealth <= 0) {
 				this.playerHealth = 0;
 				this.gameRunning = false;
 
 				alert("you lose");
+				return true;
 			}
 		},
 		damageMath(minDamage, maxDamage) {

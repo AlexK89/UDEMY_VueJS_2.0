@@ -6,20 +6,41 @@ new Vue({
 		gameRunning: false
 	},
 	methods: {
+		// Main functionality
 		startGame() {
 			this.gameRunning = true;
 			this.playerHealth = 100;
 			this.monsterHealth = 100;
 		},
-		attack() {
-			this.monsterHealth -= this.damageMath(3, 10);
+		defaultAttack() {
+			// passing 4 params: playerMin, playerMax, monsterMin, monsterMax
+			this.attack(3, 10, 0, 12);
+		},
 
+		specialAttack() {
+			// passing 4 params: playerMin, playerMax, monsterMin, monsterMax
+			this.attack(8, 16, 0, 20);
+		},
+		heal() {
+
+		},
+		resetGame() {
+
+		},
+
+		//supplemental methods
+		attack(playerMin, playerMax, monsterMin, monsterMax) {
+			console.log(playerMin);
+			this.monsterHealth -= this.damageMath(playerMin, playerMax);
 			if (this.checkResult()) {
 				return;
 			}
-			
-			this.playerHealth -= this.damageMath(0, 12);
+
+			this.playerHealth -= this.damageMath(monsterMin, monsterMax);
 			this.checkResult();
+		},
+		damageMath(minDamage, maxDamage) {
+			return Math.max(Math.ceil(Math.random() * maxDamage), minDamage);
 		},
 		checkResult() {
 			if (this.monsterHealth <= 0) {
@@ -35,18 +56,6 @@ new Vue({
 				alert("you lose");
 				return true;
 			}
-		},
-		damageMath(minDamage, maxDamage) {
-			return Math.max(Math.ceil(Math.random() * maxDamage), minDamage);
-		},
-		specialAttack() {
-
-		},
-		heal() {
-
-		},
-		resetGame() {
-
 		},
 	}
 });

@@ -15,6 +15,7 @@
 	margin: 0;
 	height: 100%;
 	color: white;
+	transition: .3s;
 }
 
 .controls, .log {

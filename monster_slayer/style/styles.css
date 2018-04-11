@@ -15,7 +15,7 @@
 	margin: 0;
 	height: 100%;
 	color: white;
-	transition: .3s;
+	transition: .5s;
 }
 
 .controls, .log {
@@ -41,16 +41,17 @@
 
 .log ul li {
 	margin: 5px;
+	padding: 1em 0;
 }
 
-.log ul .player-turn {
+.player-turn {
 	color: blue;
-	background-color: #e4e8ff;
+	background-color: rgba(228, 232, 255, 0.5);
 }
 
-.log ul .monster-turn {
+.monster-turn {
 	color: red;
-	background-color: #ffc0c1;
+	background-color: rgba(255, 192, 193, 0.5);
 }
 
 button {

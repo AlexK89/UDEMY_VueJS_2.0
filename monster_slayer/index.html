@@ -2,11 +2,56 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style/foundation.min.css">
 	<link rel="stylesheet" href="style/styles.css">
 	<title>Monster Sleyer</title>
 </head>
 <body>
+<div id="app">
+	<section class="row">
+		<div class="small-6 columns">
+			<h1 class="text-center">YOU</h1>
+			<div class="healthbar-container">
+				<div class="healthbar text-center"
+					 :style="{width: playerHealth + '%'}">
+					{{ playerHealth }}
+				</div>
+			</div>
+		</div>
+		<div class="small-6 columns">
+			<h1 class="text-center">MONSTER</h1>
+			<div class="healthbar-container">
+				<div class="healthbar text-center"
+					 :style="{width: playerHealth + '%'}">
+					{{ monsterHealth }}
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="row controls" v-if="!gameRunning">
+		<div class="small-12 columns">
+			<button id="start-game" @click="startGame()">START NEW GAME</button>
+		</div>
+	</section>
+	<section class="row controls" v-else>
+		<div class="small-12 columns">
+			<button id="attack">ATTACK</button>
+			<button id="special-attack">SPECIAL ATTACK</button>
+			<button id="heal">HEAL</button>
+			<button id="give-up">GIVE UP</button>
+		</div>
+	</section>
+	<section class="row log">
+		<div class="small-12 columns">
+			<ul>
+				<li>
+
+				</li>
+			</ul>
+		</div>
+	</section>
+</div>
 <script src="../vue.js"></script>
-<script src="src/main.js"></script>
+<script src="src/app.js"></script>
 </body>
 </html>

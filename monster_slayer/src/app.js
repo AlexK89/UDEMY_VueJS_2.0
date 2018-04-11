@@ -16,12 +16,12 @@ new Vue({
 		},
 		defaultAttack() {
 			// passing 4 params: playerMin, playerMax, monsterMin, monsterMax
-			this.attack(3, 10, 3, 15);
+			this.attack(3, 10, 2, 12);
 		},
 
 		specialAttack() {
 			// passing 4 params: playerMin, playerMax, monsterMin, monsterMax
-			this.attack(5, 16, 5, 22);
+			this.attack(5, 16, 5, 16);
 		},
 		heal() {
 			this.monsterAttack(0, 15);
@@ -50,12 +50,12 @@ new Vue({
 		//supplemental methods
 		attack(playerMin, playerMax, monsterMin, monsterMax) {
 			// For "damageMath" pass parameters: minDamage, maxDamage
-			let damage = this.damageMath(playerMin, playerMax);
+			let damageByPlayer = this.damageMath(playerMin, playerMax);
 
-			this.monsterHealth -= damage;
+			this.monsterHealth -= damageByPlayer;
 
 			//Pass parameters: attacker, target, damage, isPlayer
-			this.commitTurn('Player', 'Monster', damage, true);
+			this.commitTurn('Player', 'Monster', damageByPlayer, true);
 			if (this.checkResult()) {
 				return;
 			}
@@ -65,12 +65,12 @@ new Vue({
 		},
 		// we use separate method to make it accessible for healing step
 		monsterAttack(monsterMin, monsterMax) {
-			let damage = this.damageMath(monsterMin, monsterMax);
+			let damageByMonster = this.damageMath(monsterMin, monsterMax);
 
-			this.playerHealth -= damage;
+			this.playerHealth -= damageByMonster;
 
 			//Pass parameters: attacker, target, damage, isPlayer
-			this.commitTurn('Monster', 'Player', damage, false);
+			this.commitTurn('Monster', 'Player', damageByMonster, false);
 		},
 		commitTurn(attacker, target, damage, isPlayer) {
 			this.turns.unshift({
@@ -86,13 +86,18 @@ new Vue({
 				this.monsterHealth = 0;
 				this.gameRunning = false;
 
-				alert("you win");
+				setTimeout(() => {
+					alert("You win :)");
+				}, 500);
+
 				return true;
 			} else if (this.playerHealth <= 0) {
 				this.playerHealth = 0;
 				this.gameRunning = false;
 
-				alert("you lose");
+				setTimeout(() => {
+					alert("You lose :(");
+				}, 500);
 				return true;
 			}
 		},

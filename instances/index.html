@@ -9,12 +9,15 @@
 
 </head>
 <body>
-<div id="app">
+<div id="app1">
 	<h1>{{ title }}</h1>
 	<button @click="show">Click me</button>
 	<p v-if="showParagraph">This is not always visible</p>
 </div>
-
+<div id="app2">
+	<h1>{{ title }}</h1>
+	<button @click="onChange">Click me</button>
+</div>
 </body>
 <script src="../vue.js"></script>
 <script src="src/main.js"></script>

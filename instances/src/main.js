@@ -13,6 +13,10 @@ let vm1 = new Vue( {
 		show() {
 			this.showParagraph = true;
 			this.updateTitle('The vuejs instance');
+			// printout the button object
+			console.log(this.$refs);
+
+			this.$refs.myButton.innerText = 'Passed by $refs'
 		},
 		updateTitle(title) {
 			this.title = title;

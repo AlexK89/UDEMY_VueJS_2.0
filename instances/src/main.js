@@ -44,3 +44,11 @@ let vm2 = new Vue( {
 setTimeout(() => {
 	vm1.title = 'Changed by timer';
 }, 3000);
+
+
+//mount template from Vue object
+let vm3 = new Vue({
+	template: '<h1>Hello</h1>'
+});
+
+vm3.$mount('#app3');

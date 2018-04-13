@@ -63,3 +63,48 @@ let vm3 = new Vue({
 vm3.$mount();
 document.getElementById('app3').appendChild(vm3.$el);
 
+// Instance Lifecycle
+
+new Vue({
+	el: '#app4',
+	data: {
+		title: 'The VueJS instance'
+	},
+	methods: {
+		destroy() {
+			this.$destroy();
+		}
+	},
+	beforeCreate() {
+		console.log('Before create');
+		console.log('==================');
+	},
+	created() {
+		console.log('Created');
+		console.log('==================');
+	},
+	beforeMount() {
+		console.log('Before mount');
+		console.log('==================');
+	},
+	mounted() {
+		console.log('Mounted');
+		console.log('==================');
+	},
+	beforeUpdate() {
+		console.log('Before update');
+		console.log('==================');
+	},
+	updated() {
+		console.log('Updated');
+		console.log('==================');
+	},
+	beforeDestroy() {
+		console.log('Before destroy');
+		console.log('==================');
+	},
+	destroyed() {
+		console.log('Destroy');
+		console.log('==================');
+	}
+});

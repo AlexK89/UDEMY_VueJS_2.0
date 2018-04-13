@@ -1,3 +1,9 @@
+// Component - should be defined before any vue instance
+
+Vue.component('hello', {
+	template: '<h1>Hello from component</h1>'
+});
+
 let vm1 = new Vue( {
 	data: {
 		title: 'vuejs',
@@ -56,3 +62,4 @@ let vm3 = new Vue({
 // OR
 vm3.$mount();
 document.getElementById('app3').appendChild(vm3.$el);
+

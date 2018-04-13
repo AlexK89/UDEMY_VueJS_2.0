@@ -1,5 +1,4 @@
 let vm1 = new Vue( {
-	el: '#app1',
 	data: {
 		title: 'vuejs',
 		showParagraph: false
@@ -23,6 +22,7 @@ let vm1 = new Vue( {
 		}
 	}
 });
+vm1.$mount('#app1');
 
 let vm2 = new Vue( {
 	el: '#app2',

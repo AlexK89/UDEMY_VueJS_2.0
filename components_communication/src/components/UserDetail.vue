@@ -32,7 +32,7 @@
 			},
 			resetAge() {
 				this.userAge = 28;
-				eventBus.$emit('ageWasReset', this.userAge);
+				eventBus.changeAge(this.userAge);
 			},
 
 		},

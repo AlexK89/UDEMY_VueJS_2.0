@@ -19,12 +19,12 @@
 				// this.$emit('ageWasChanged', this.userAge);
 
 				// Pass data between siblings step: 2
-				eventBus.$emit('ageWasChanged', this.userAge);
+				eventBus.changeAge(this.userAge);
 			}
 		},
 		created() {
 			// listen events emitted
-			eventBus.$on('ageWasReset', (data) => {
+			eventBus.$on('ageWasChanged', (data) => {
 				this.userAge = data;
 			});
 		}

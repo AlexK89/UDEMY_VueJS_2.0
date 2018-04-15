@@ -3,6 +3,7 @@
 		<h3>You may view the User Details here</h3>
 		<p>Many Details</p>
 		<p>User name: {{userName}}</p>
+		<button @click="resetName">Reset name</button>
 	</div>
 </template>
 
@@ -10,7 +11,21 @@
 	export default {
 		name: 'UserDetail',
 		// props - for getting properties from outside
-		props: ['userName']
+		props: {
+			// to force a type of parameter we need to use props as object
+			// userName: String
+			// if we want to add more params for the variable use object
+			userName: {
+				type: String,
+				required: true
+			}
+		},
+		methods: {
+			resetName() {
+				this.userName = 'Alex';
+				this.$emit('resetedName', this.userName);
+			}
+		}
 	}
 </script>
 

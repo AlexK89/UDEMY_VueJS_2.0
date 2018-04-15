@@ -2,13 +2,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-				<pageHeader></pageHeader>
+				<Header></Header>
 			</div>
 		</div>
 		<hr>
 		<div class="row">
-			<serverItem class="col-xs-12 col-sm-6"></serverItem>
-			<serverDetails class="col-xs-12 col-sm-6"></serverDetails>
+			<Servers class="col-xs-12 col-sm-6"></Servers>
+			<ServerDetails class="col-xs-12 col-sm-6"></ServerDetails>
 		</div>
 		<hr>
 		<div class="row">
@@ -20,17 +20,17 @@
 </template>
 
 <script>
-	import Header from './Header.vue';
-	import Servers from './Servers.vue';
-	import Footer from './Footer.vue';
-	import ServerDetails from './ServerDetails.vue';
+	import Header from './components/Shared/Header.vue';
+	import Servers from './components/Server/Servers.vue';
+	import Footer from './components/Shared/Footer.vue';
+	import ServerDetails from './components/Server/ServerDetails.vue';
 
 	export default {
 		components: {
-			'serverItem': Servers,
-			'pageHeader': Header,
-			'serverDetails': ServerDetails,
-			'Footer': Footer,
+			Servers,
+			Header,
+			ServerDetails,
+			Footer,
 		}
 	}
 </script>

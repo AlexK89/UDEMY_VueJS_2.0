@@ -1,9 +1,18 @@
 <template>
-	<h1>HELLO world!</h1>
+	<div>
+		<h1>HELLO {{ planetMars }}!</h1>
+		<server-status></server-status>
+	</div>
 </template>
 
 <script>
-	export default {}
+	export default {
+		data() {
+			return {
+				planetMars: 'Mars'
+			}
+		}
+	}
 </script>
 
 <style lang="scss">

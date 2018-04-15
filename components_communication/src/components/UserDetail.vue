@@ -2,7 +2,7 @@
 	<div class="component">
 		<h3>You may view the User Details here</h3>
 		<p>Many Details</p>
-		<p>User name: {{userName}}</p>
+		<p>User name: {{reverseName()}}</p>
 		<button @click="resetName">Reset name</button>
 	</div>
 </template>
@@ -18,12 +18,12 @@
 			userName: {
 				type: String,
 				required: true
-			}
+			},
+			resetName: Function
 		},
 		methods: {
-			resetName() {
-				this.userName = 'Alex';
-				this.$emit('resetedName', this.userName);
+			reverseName() {
+				return this.userName.split('').reverse().join('');
 			}
 		}
 	}

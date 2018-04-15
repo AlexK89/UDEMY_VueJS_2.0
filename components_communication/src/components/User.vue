@@ -7,7 +7,7 @@
 		<hr>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
-				<app-user-detail v-bind:userName="userName" @resetedName="userName = $event"></app-user-detail>
+				<app-user-detail v-bind:userName="userName" @resetedName="userName = $event" :resetName = 'resetName'></app-user-detail>
 			</div>
 			<div class="col-xs-12 col-sm-6">
 				<app-user-edit></app-user-edit>
@@ -29,6 +29,9 @@
 		methods: {
 			changeName() {
 				this.userName = 'Kristina'
+			},
+			resetName() {
+				this.userName = 'Alex'
 			}
 		},
 		components: {

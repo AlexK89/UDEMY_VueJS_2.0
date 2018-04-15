@@ -7,3 +7,8 @@
 		name: "ServerDetails"
 	}
 </script>
+<style scoped>
+	p {
+		background: #00acc1;
+	}
+</style>

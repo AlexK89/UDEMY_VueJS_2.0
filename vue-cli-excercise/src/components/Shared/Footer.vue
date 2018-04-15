@@ -7,3 +7,8 @@
 		name: "Footer"
 	}
 </script>
+<style scoped>
+	p {
+		background-color: #00e5ff;
+	}
+</style>

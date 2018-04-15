@@ -11,6 +11,7 @@
 <style scoped>
 	div {
 		background-color: #8e99f3;
+		height: 100%;
 		color: #ffffff;
 		padding: 1em 2em;
 		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),

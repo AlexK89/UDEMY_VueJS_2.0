@@ -1,12 +1,12 @@
 <template>
 	<div class="component">
 		<h1>The User Component</h1>
-		<p>I'm an awesome {{userName}}!</p>
+		<p>I'm an awesome User!</p>
 		<button @click="changeName">Change User name</button>
 		<hr>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
-				<app-user-detail></app-user-detail>
+				<app-user-detail v-bind:userName="userName"></app-user-detail>
 			</div>
 			<div class="col-xs-12 col-sm-6">
 				<app-user-edit></app-user-edit>
@@ -57,5 +57,10 @@
 	button:hover:active {
 		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
 		0 1px 2px rgba(0, 0, 0, 0.24);
+	}
+
+	.row {
+		display: flex;
+		justify-content: space-between;
 	}
 </style>

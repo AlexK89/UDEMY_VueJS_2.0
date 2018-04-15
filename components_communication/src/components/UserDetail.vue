@@ -2,10 +2,16 @@
 	<div class="component">
 		<h3>You may view the User Details here</h3>
 		<p>Many Details</p>
+		<p>User name: {{userName}}</p>
 	</div>
 </template>
 
 <script>
+	export default {
+		name: 'UserDetail',
+		// props - for getting properties from outside
+		props: ['userName']
+	}
 </script>
 
 <style scoped>

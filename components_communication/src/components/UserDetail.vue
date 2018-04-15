@@ -10,6 +10,8 @@
 </template>
 
 <script>
+	import {eventBus} from '../main.js';
+
 	export default {
 		name: 'UserDetail',
 		// props - for getting properties from outside
@@ -22,13 +24,24 @@
 				required: true
 			},
 			resetName: Function,
-			resetAge: Function,
 			userAge: Number
 		},
 		methods: {
 			reverseName() {
 				return this.userName.split('').reverse().join('');
-			}
+			},
+			resetAge() {
+				this.userAge = 28;
+				eventBus.$emit('ageWasReset', this.userAge);
+			},
+
+		},
+		// Pass data between siblings step: 3
+		created() {
+			// listen events emitted
+			eventBus.$on('ageWasChanged', (data) => {
+				this.userAge = data;
+			});
 		}
 	}
 </script>

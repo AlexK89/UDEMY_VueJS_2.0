@@ -11,7 +11,6 @@
 				<app-user-detail v-bind:userName="userName"
 								 @resetedName="userName = $event"
 								 :resetName="resetName"
-								 :resetAge="resetAge"
 								 :userAge="age"
 				></app-user-detail>
 			</div>
@@ -41,9 +40,6 @@
 			},
 			resetName() {
 				this.userName = 'Alex'
-			},
-			resetAge() {
-				this.age = 28
 			}
 		},
 		components: {

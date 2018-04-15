@@ -8,14 +8,25 @@
 </template>
 
 <script>
+	// {eventBus} - ES6 syntax for get specific data from external file
+	import {eventBus} from '../main.js';
 	export default {
 		name: 'UserEdit',
 		props: ['userAge'],
 		methods: {
 			editAge() {
 				this.userAge = 30;
-				this.$emit('ageWasChanged', this.userAge);
+				// this.$emit('ageWasChanged', this.userAge);
+
+				// Pass data between siblings step: 2
+				eventBus.$emit('ageWasChanged', this.userAge);
 			}
+		},
+		created() {
+			// listen events emitted
+			eventBus.$on('ageWasReset', (data) => {
+				this.userAge = data;
+			});
 		}
 	}
 </script>

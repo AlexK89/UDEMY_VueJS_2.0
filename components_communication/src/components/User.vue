@@ -1,16 +1,24 @@
 <template>
-	<div class="component">
+	<div>
 		<h1>The User Component</h1>
 		<p>I'm an awesome User!</p>
 		<p>Name is: {{ userName }}</p>
+		<p>Age is: {{ age }}</p>
 		<button @click="changeName">Change User name</button>
 		<hr>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
-				<app-user-detail v-bind:userName="userName" @resetedName="userName = $event" :resetName = 'resetName'></app-user-detail>
+				<app-user-detail v-bind:userName="userName"
+								 @resetedName="userName = $event"
+								 :resetName="resetName"
+								 :resetAge="resetAge"
+								 :userAge="age"
+				></app-user-detail>
 			</div>
 			<div class="col-xs-12 col-sm-6">
-				<app-user-edit></app-user-edit>
+				<app-user-edit :userAge="age"
+							   @ageWasChanged="age=$event"
+				></app-user-edit>
 			</div>
 		</div>
 	</div>
@@ -23,7 +31,8 @@
 	export default {
 		data() {
 			return {
-				userName: 'Alex'
+				userName: 'Alex',
+				age: 28
 			}
 		},
 		methods: {
@@ -32,6 +41,9 @@
 			},
 			resetName() {
 				this.userName = 'Alex'
+			},
+			resetAge() {
+				this.age = 28
 			}
 		},
 		components: {
@@ -44,5 +56,13 @@
 	.row {
 		display: flex;
 		justify-content: space-between;
+	}
+
+	.component {
+		background-color: #5c6bc0;
+		color: #ffffff;
+		padding: 1em 2em;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+		0 1px 2px rgba(0, 0, 0, 0.24);
 	}
 </style>

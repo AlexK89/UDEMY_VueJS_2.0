@@ -3,7 +3,9 @@
 		<h3>You may view the User Details here</h3>
 		<p>Many Details</p>
 		<p>User name: {{reverseName()}}</p>
+		<p>User age: {{ userAge }}</p>
 		<button @click="resetName">Reset name</button>
+		<button @click="resetAge">Reset age</button>
 	</div>
 </template>
 
@@ -19,7 +21,9 @@
 				type: String,
 				required: true
 			},
-			resetName: Function
+			resetName: Function,
+			resetAge: Function,
+			userAge: Number
 		},
 		methods: {
 			reverseName() {
@@ -29,12 +33,3 @@
 	}
 </script>
 
-<style scoped>
-	div {
-		background-color: #5c6bc0;
-		color: #ffffff;
-		padding: 1em 2em;
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-					0 1px 2px rgba(0, 0, 0, 0.24);
-	}
-</style>

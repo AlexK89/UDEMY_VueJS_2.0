@@ -2,19 +2,26 @@
 	<div class="component">
 		<h3>You may edit the User here</h3>
 		<p>Edit me!</p>
+		<p>User age: {{ userAge }}</p>
+		<button @click="editAge">Edit age</button>
 	</div>
 </template>
 
 <script>
+	export default {
+		name: 'UserEdit',
+		props: ['userAge'],
+		methods: {
+			editAge() {
+				this.userAge = 30;
+				this.$emit('ageWasChanged', this.userAge);
+			}
+		}
+	}
 </script>
 
 <style scoped>
 	div {
-		background-color: #8e99f3;
 		height: 100%;
-		color: #ffffff;
-		padding: 1em 2em;
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-					0 1px 2px rgba(0, 0, 0, 0.24);
 	}
 </style>

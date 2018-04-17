@@ -4,7 +4,7 @@
 			<li
 					class="list-group-item"
 					v-for="server in servers">
-				Server #{{ server.id }}; Name: {{ server.name }}; Status: {{ server.status }}
+				Server #{{ server.id }} <span>More...</span>
 			</li>
 		</ul>
 	</div>

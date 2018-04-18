@@ -1,7 +1,14 @@
 <template>
 	<div class="quote">
 		<!--slot - is reserved word to receive html block -->
-		<slot></slot>
+		<!--we can use few slots-->
+		<!--we can also separate content passing params-->
+		<div class="quote">
+			<slot name="title"></slot>
+		</div>
+		<div class="quote">
+			<slot name="body"></slot>
+		</div>
 	</div>
 </template>
 

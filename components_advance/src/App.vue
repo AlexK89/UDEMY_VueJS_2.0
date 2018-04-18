@@ -3,8 +3,8 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<our-quote>
-					<h3>Quote title</h3>
-					<p>our quote body</p>
+					<h3 slot="title">Quote title</h3>
+					<p slot="body">our quote body</p>
 				</our-quote>
 			</div>
 		</div>

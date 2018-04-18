@@ -2,7 +2,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-				<our-quote></our-quote>
+				<our-quote>
+					<h3>Quote title</h3>
+					<p>our quote body</p>
+				</our-quote>
 			</div>
 		</div>
 	</div>

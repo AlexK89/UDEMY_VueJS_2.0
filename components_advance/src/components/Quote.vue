@@ -1,6 +1,7 @@
 <template>
 	<div class="quote">
-		<p>Our quote</p>
+		<!--slot - is reserved word to receive html block -->
+		<slot></slot>
 	</div>
 </template>
 

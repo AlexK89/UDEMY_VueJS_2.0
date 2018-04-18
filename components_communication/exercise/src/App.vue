@@ -18,16 +18,6 @@
 	import ServerDetails from './components/Server/ServerDetails.vue';
 
 	export default {
-		data() {
-			return {
-				servers: [
-					{id: '001', name: 'Mac', status: 'good'},
-					{id: '002', name: 'Linux', status: 'poor'},
-					{id: '003', name: 'Debian', status: 'good'},
-					{id: '004', name: 'Windows', status: 'critical'}
-				]
-			}
-		},
 		components: {
 			appHeader: Header,
 			Servers,

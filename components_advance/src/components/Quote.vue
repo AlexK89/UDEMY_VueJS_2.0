@@ -8,6 +8,7 @@
 		</div>
 		<div class="quote">
 			<slot name="body"></slot>
+			<slot name="subtitle">Default subtitle</slot>
 		</div>
 	</div>
 </template>

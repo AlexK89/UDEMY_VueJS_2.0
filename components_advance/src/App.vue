@@ -5,7 +5,7 @@
 				<button @click="selectedComponent='ourQuote'">Quote</button>
 				<button @click="selectedComponent='ourAuthor'">Author</button>
 				<button @click="selectedComponent='ourNew'">New</button>
-				
+
 				<!--'keep-alive' is to keep our component and do not destroy it-->
 				<keep-alive>
 					<!--Dynamic components-->

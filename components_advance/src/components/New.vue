@@ -4,7 +4,13 @@
 
 <script>
 	export default {
-		name: "New"
+		name: "New",
+		activated() {
+			console.log('Activated New');
+		},
+		deactivated() {
+			console.log('Deactivated New');
+		}
 	}
 </script>
 

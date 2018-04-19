@@ -1,5 +1,5 @@
 <template>
-    <div></div>
+    <div>Default green</div>
 </template>
 
 <script>

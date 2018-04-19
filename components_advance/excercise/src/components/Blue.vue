@@ -1,5 +1,5 @@
 <template>
-    <div></div>
+    <div>Default Blue</div>
 </template>
 
 <script>

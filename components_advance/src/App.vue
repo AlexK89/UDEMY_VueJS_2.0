@@ -5,10 +5,15 @@
 				<button @click="selectedComponent='ourQuote'">Quote</button>
 				<button @click="selectedComponent='ourAuthor'">Author</button>
 				<button @click="selectedComponent='ourNew'">New</button>
-				<!--Dynamic components-->
-				<component :is="selectedComponent">
-					<p>Default Content</p>
-				</component>
+				
+				<!--'keep-alive' is to keep our component and do not destroy it-->
+				<keep-alive>
+					<!--Dynamic components-->
+					<component :is="selectedComponent">
+						<p>Default Content</p>
+					</component>
+				</keep-alive>
+
 				<!--<our-quote>-->
 					<!--<h3 slot="title">Quote title</h3>-->
 					<!--<p slot="body">our quote body</p>-->

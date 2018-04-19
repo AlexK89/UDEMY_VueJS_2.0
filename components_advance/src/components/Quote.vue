@@ -9,12 +9,19 @@
 		<div class="quote">
 			<slot name="body"></slot>
 			<slot name="subtitle">Default subtitle</slot>
+			<button @click="counter++">Increase</button>
+			<p>{{counter}}</p>
 		</div>
 	</div>
 </template>
 
 <script>
 	export default {
+		data() {
+			return {
+				counter: 0
+			}
+		},
 		name: "Quote"
 	}
 </script>

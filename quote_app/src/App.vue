@@ -1,18 +1,19 @@
 <template>
-	<div id="app">
+	<div class="container">
 
 	</div>
 </template>
 
 <script>
 	export default {
-		name: 'app',
 		data() {
-
+			return {
+				quotes: [],
+				maxQuotes: 10
+			}
 		}
 	}
 </script>
 
-<style lang="scss">
-
+<style>
 </style>

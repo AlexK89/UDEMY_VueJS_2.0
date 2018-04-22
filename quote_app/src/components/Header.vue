@@ -19,18 +19,20 @@
 </script>
 
 <style scoped>
+	div {
+		text-align: center;
+	}
 	.bar {
 		width: 90%;
-		height: 20px;
+		height: 2px;
 		margin: 0 auto;
 		background-color: #d5d5d5;
-		border: 1px solid #0a0a0a;
 	}
 
 	.bar span {
 		display: block;
 		height: 100%;
-		background: #00bfa5;
+		background: #f26192;
 		transition: .3s;
 	}
 </style>

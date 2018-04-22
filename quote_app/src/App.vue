@@ -23,7 +23,7 @@
 		methods: {
 			addNewQuote(quote) {
 				if (!(this.quotes.length >= this.maxQuotes)) {
-					this.quotes.push(quote);
+					this.quotes.unshift(quote);
 				}
 			},
 			deleteQuote(index) {

@@ -1,6 +1,6 @@
 <template>
-	<div class="row">
-		<form class="col-sm-10 com-sm-offset-1">
+	<div>
+		<form>
 			<label for="new-quote"></label>
 			<textarea name="new-quote" id="new-quote" cols="30" rows="10" class="form-control" v-model="quote"></textarea>
 			<button class="button button-primary" @click.prevent="createNewQuote">Add quote</button>

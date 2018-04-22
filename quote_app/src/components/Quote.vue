@@ -1,5 +1,5 @@
 <template>
-	<div class="col-sm-6 col-md-3">
+	<div>
 		<div class="panel">
 			<div class="panel-body quote">
 				<slot></slot>

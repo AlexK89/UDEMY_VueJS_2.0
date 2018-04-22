@@ -1,6 +1,7 @@
 <template>
-	<div class="row">
-		<app-quote v-for="quote in quotes">{{quote}}</app-quote>
+	<div>
+		<!--"native" modifier means apply click to element which we insert into app-quote-->
+		<app-quote v-for="(quote, index) in quotes" @click.native="removeQuote(index)">{{quote}}</app-quote>
 	</div>
 </template>
 
@@ -10,6 +11,11 @@
 	export default {
 		name: "QuoteGrid",
 		props: ['quotes'],
+		methods: {
+			removeQuote(index) {
+				this.$emit('deletedQuote', index);
+			}
+		},
 		components: {
 			appQuote: Quote
 		}

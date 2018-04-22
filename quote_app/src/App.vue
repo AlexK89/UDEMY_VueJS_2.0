@@ -1,7 +1,7 @@
 <template>
-	<div class="container">
+	<div>
 		<app-new-quote @newQuote="addNewQuote"></app-new-quote>
-		<app-quote-grid :quotes="quotes"></app-quote-grid>
+		<app-quote-grid :quotes="quotes" @deletedQuote="deleteQuote"></app-quote-grid>
 	</div>
 </template>
 
@@ -21,6 +21,9 @@
 		methods: {
 			addNewQuote(quote) {
 				this.quotes.push(quote);
+			},
+			deleteQuote(index) {
+				this.quotes.splice(index, 1);
 			}
 		},
 		components: {

@@ -43,6 +43,6 @@
 	p {
 		text-align: end;
 		padding: 1em;
-		border-right: 2px solid #ffffff;
+		border-right: 4px solid #ffffff;
 	}
 </style>

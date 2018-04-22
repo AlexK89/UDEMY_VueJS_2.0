@@ -21,6 +21,7 @@
 <style scoped>
 	div {
 		text-align: center;
+		color: #9e9e9e;
 	}
 	.bar {
 		width: 90%;

@@ -40,6 +40,7 @@
 
 <style>
 	* {
+		font-family: 'Roboto', cursive;
 		box-sizing: border-box;
 	}
 </style>

@@ -101,7 +101,7 @@
 				<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 					<button
 							class="btn btn-primary"
-							@click.prevent="">Submit!
+							@click.prevent="submitted">Submit!
 					</button>
 				</div>
 			</div>
@@ -115,7 +115,7 @@
 			<app-switcher v-model="dataSwitch"></app-switcher>
 		</div>
 		<hr>
-		<div class="row" :class="{ hide: !dataSwitch }">
+		<div class="row" v-if="isSubmitted || dataSwitch">
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -160,7 +160,13 @@
 					priorityOptions: ['High', 'Normal', 'Low'],
 					prioritySelected: 'Low'
 				},
-				dataSwitch: false
+				dataSwitch: false,
+				isSubmitted: false
+			}
+		},
+		methods: {
+			submitted() {
+				this.isSubmitted = true;
 			}
 		},
 		components: {
@@ -170,7 +176,4 @@
 </script>
 
 <style>
-	.hide {
-		display: none;
-	}
 </style>

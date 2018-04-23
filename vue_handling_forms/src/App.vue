@@ -1,6 +1,5 @@
 <template>
 	<div class="container">
-		form
 		<form>
 			<div class="row">
 				<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
@@ -109,6 +108,14 @@
 		</form>
 		<hr>
 		<div class="row">
+			<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			<!-- the custom control needs to have two things to work with v-model:&ndash;&gt;-->
+			<!-- A value property (which can be bound via v-bind:value="...") and an input event (=> v-on:input="...")-->
+			<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+			<app-switcher v-model="dataSwitch"></app-switcher>
+		</div>
+		<hr>
+		<div class="row" :class="{ hide: !dataSwitch }">
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -127,7 +134,7 @@
 						</ul>
 						<p>Gender: {{ userData.gender }}</p>
 						<p>Priority: {{ priorities.prioritySelected }}</p>
-						<p>Switched:</p>
+						<p>Switched: {{ dataSwitch }}</p>
 					</div>
 				</div>
 			</div>
@@ -136,6 +143,8 @@
 </template>
 
 <script>
+	import Switch from './components/Switch.vue';
+
 	export default {
 		data() {
 			return {
@@ -150,12 +159,18 @@
 				priorities: {
 					priorityOptions: ['High', 'Normal', 'Low'],
 					prioritySelected: 'Low'
-				}
+				},
+				dataSwitch: false
 			}
+		},
+		components: {
+			appSwitcher: Switch
 		}
 	}
 </script>
 
 <style>
-
+	.hide {
+		display: none;
+	}
 </style>

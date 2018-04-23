@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="full-name">
 		<input :value="firstName" type="text" placeholder="First Name" @input="nameChanged(true, $event)">
 		<input :value="lastName" type="text" placeholder="Last Name" @input="nameChanged(false, $event)">
 	</div>

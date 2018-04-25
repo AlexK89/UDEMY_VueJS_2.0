@@ -9,7 +9,6 @@
 				<p v-html="'v-html - <strong>html text</strong>'"></p>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 				<h1 v-highlight="'grey'">Custom Directives</h1>
@@ -21,7 +20,9 @@
 </template>
 
 <script>
-	export default {}
+	export default {
+		name: 'App'
+	}
 </script>
 
 <style>

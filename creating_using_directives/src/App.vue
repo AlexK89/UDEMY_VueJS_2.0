@@ -14,7 +14,12 @@
 				<!--delayed is a modifier, we can create and use a lot of modifiers-->
 				<h1 v-highlight:background.delayed="'green'">Custom Directives</h1>
 				<h1 v-highlight="'green'">Custom Directives</h1>
-				<h1 v-local-highlight:background.delayed.blink="'green'">Custom Directives</h1>
+				<h1 v-local-highlight:background.delayed.blink="{
+					mainColor: 'green',
+					secondColor: 'blue',
+					interval: 500,
+					target: 'background'
+					}">Custom Directives</h1>
 				<p v-text="'v-text - Hello World'"></p>
 				<p v-html="'v-html - <strong>html text</strong>'"></p>
 			</div>
@@ -34,29 +39,27 @@
 					}
 
 					if (binding.modifiers['blink']) {
-						let mainColor = binding.value;
-						let secondColor = 'blue';
-						let currentColor = mainColor;
+						let currentColor = binding.value.mainColor;
 
 						setTimeout(() => {
 							setInterval(() => {
-								currentColor === mainColor ? currentColor = secondColor : currentColor = mainColor;
+								currentColor === binding.value.mainColor ? currentColor = binding.value.secondColor : currentColor = binding.value.mainColor;
 
-								if (binding.arg == 'background') {
+								if (binding.value.target === 'background') {
 									el.style.background = currentColor;
 								} else {
 									el.style.color = currentColor;
 								}
-							}, 1000);
+							}, binding.value.interval);
 
 						}, 3000);
 
 					} else {
 						setTimeout(() => {
-							if (binding.arg == 'background') {
-								el.style.background = binding.value;
+							if (binding.value.target === 'background') {
+								el.style.background = binding.value.mainColor;
 							} else {
-								el.style.color = binding.value;
+								el.style.color = binding.value.mainColor;
 							}
 						}, delay);
 					}

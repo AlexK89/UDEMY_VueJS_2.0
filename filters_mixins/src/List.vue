@@ -11,7 +11,10 @@
 	import {fruitMixin} from './fruitMixin.js';
 
 	export default {
-		mixins: [fruitMixin]
+		mixins: [fruitMixin],
+		created() {
+			console.log('Created hook from List component');
+		}
 	}
 </script>
 

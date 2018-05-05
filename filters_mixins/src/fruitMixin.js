@@ -11,5 +11,8 @@ export const fruitMixin = {
 				return element.match(this.filteredText);
 			})
 		}
+	},
+	created() {
+		console.log('Created hook from mixin');
 	}
 };

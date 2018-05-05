@@ -35,6 +35,9 @@
 		mixins: [fruitMixin],
 		components: {
 			appList: List
+		},
+		created() {
+			console.log('Created hook from App component');
 		}
 	}
 </script>

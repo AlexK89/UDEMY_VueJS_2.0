@@ -8,7 +8,7 @@
 </template>
 
 <script>
-	import {fruitMixin} from 'fruitMixin';
+	import {fruitMixin} from './fruitMixin.js';
 
 	export default {
 		mixins: [fruitMixin]

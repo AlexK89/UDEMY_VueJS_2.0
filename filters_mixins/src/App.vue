@@ -9,6 +9,7 @@
 				<ul>
 					<li v-for="fruit in filteredFruits">{{ fruit }}</li>
 				</ul>
+				<button @click="fruits.push('Berries')">Add Berries to List</button>
 				<hr>
 				<app-list></app-list>
 			</div>

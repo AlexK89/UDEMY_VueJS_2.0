@@ -7,7 +7,10 @@
                 <button class="btn btn-primary" @click="switcher">Show alert</button>
 				<br>
 				<br>
-				<transition name="fade">
+				<!--<transition name="fade">-->
+					<!--<div class="alert alert-info" v-if="show">This is some info</div>-->
+				<!--</transition>-->
+				<transition name="slide">
 					<div class="alert alert-info" v-if="show">This is some info</div>
 				</transition>
 			</div>
@@ -32,8 +35,8 @@
 
 <style>
 	.fade-enter {
-		opacity: 0;
-	}
+		 opacity: 0;
+	 }
 
 	.fade-enter-active {
 		transition: .3s;
@@ -46,5 +49,42 @@
 	.fade-leave-active {
 		transition: .3s;
 		opacity: 0;
+	}
+
+	/*Animations*/
+	@keyframes slideIn {
+		0% {
+			transform: translateY(40px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+	@keyframes slideOut {
+		0% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+		100% {
+			transform: translateY(40px);
+			opacity: 0;
+		}
+	}
+	.slide-enter {
+
+	}
+
+	.slide-enter-active {
+		animation: slideIn .7s forwards;
+	}
+
+	.slide-leave {
+
+	}
+
+	.slide-leave-active {
+		animation: slideOut .7s forwards;
 	}
 </style>

@@ -17,6 +17,13 @@
 				<transition name="slide" appear>
 					<div class="alert alert-info" v-if="show">This is some info</div>
 				</transition>
+				<!--add few classes on different stage-->
+				<transition
+						enter-active-class="animated bounce"
+						leave-active-class="animated shake"
+						appear>
+					<div class="alert alert-info" v-if="show">This is some info</div>
+				</transition>
 			</div>
 		</div>
 	</div>

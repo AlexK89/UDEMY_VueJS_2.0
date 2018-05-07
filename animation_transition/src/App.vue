@@ -8,9 +8,13 @@
 				<br>
 				<br>
 				<!--<transition name="fade">-->
-					<!--<div class="alert alert-info" v-if="show">This is some info</div>-->
+					<!--<div class="alert alert-info" v-show="show">This is some info</div>-->
 				<!--</transition>-->
 				<transition name="slide">
+					<div class="alert alert-info" v-if="show">This is some info</div>
+				</transition>
+				<!--show element on-load-->
+				<transition name="slide" appear>
 					<div class="alert alert-info" v-if="show">This is some info</div>
 				</transition>
 			</div>
@@ -22,7 +26,7 @@
 	export default {
 		data() {
 			return {
-				show: false
+				show: true
 			}
 		},
 		methods: {

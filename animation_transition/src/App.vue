@@ -4,6 +4,16 @@
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 				<h1>Animations</h1>
 				<hr>
+				<select name="animation" id="animation-type" v-model="animation">
+					<option value="" selected disabled>Choose animation</option>
+					<option value="slide">Slide</option>
+					<option value="fade">Fade</option>
+				</select>
+				<br><br>
+				<transition :name="animation">
+					<div class="alert alert-info" v-if="show">This is some info</div>
+				</transition>
+				<hr>
                 <button class="btn btn-primary" @click="switcher">Show alert</button>
 				<br>
 				<br>
@@ -33,7 +43,8 @@
 	export default {
 		data() {
 			return {
-				show: true
+				show: true,
+				animation: ''
 			}
 		},
 		methods: {

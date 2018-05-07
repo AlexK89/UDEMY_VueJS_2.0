@@ -32,18 +32,19 @@
 
 <style>
 	.fade-enter {
-
+		opacity: 0;
 	}
 
 	.fade-enter-active {
-
+		transition: .3s;
 	}
 
 	.fade-leave {
-
+		opacity: 1;
 	}
 
 	.fade-leave-active {
-		
+		transition: .3s;
+		opacity: 0;
 	}
 </style>

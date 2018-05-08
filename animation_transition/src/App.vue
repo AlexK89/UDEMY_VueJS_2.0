@@ -34,6 +34,13 @@
 						appear>
 					<div class="alert alert-info" v-if="show">This is some info</div>
 				</transition>
+				<hr>
+				<p>Switch between elements</p>
+				<transition name="slide" mode="out-in">
+					<!--We need to add unique key for each element to make them work with animations-->
+					<div class="alert alert-info" v-if="show" key="info">This is some info</div>
+					<div class="alert alert-warning" v-else key="warning">This is some warning</div>
+				</transition>
 			</div>
 		</div>
 	</div>

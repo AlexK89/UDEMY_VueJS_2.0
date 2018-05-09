@@ -43,6 +43,28 @@
 				</transition>
 			</div>
 		</div>
+		<hr>
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+				<h2>Transition JS Hooks</h2>
+				<button class="btn btn-primary" @click="load = !load">Load / Remove Element</button>
+				<br>
+				<br>
+				<transition
+					@before-enter="beforeEnter"
+					@enter="enter"
+					@after-enter="afterEnter"
+					@enter-cancelled="enterCancelled"
+
+					@before-leave="beforeLeave"
+					@leave="leave"
+					@after-leave="afterLeave"
+					@leave-cancelled="leaveCancelled"
+				>
+					<div style="width: 100px; height: 100px; background-color: #76ff7e" v-if="load"></div>
+				</transition>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -51,12 +73,41 @@
 		data() {
 			return {
 				show: true,
+				load: true,
 				animation: ''
 			}
 		},
 		methods: {
 			switcher() {
 				return this.show = !this.show
+			},
+			beforeEnter(el) {
+				console.log('beforeEnter', el);
+			},
+			enter(el, done) {
+				console.log('Enter', el);
+				// We need to execute 'done' to tell VueJS that animation has been finished
+				done();
+			},
+			afterEnter() {
+
+			},
+			enterCancelled() {
+
+			},
+			beforeLeave(el) {
+				console.log('beforeEnter', el);
+			},
+			leave(el, done) {
+				console.log('Enter', el);
+				// We need to execute 'done' to tell VueJS that animation has been finished
+				done();
+			},
+			afterLeave() {
+
+			},
+			leaveCancelled() {
+
 			}
 		}
 	}

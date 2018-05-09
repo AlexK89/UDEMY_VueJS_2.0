@@ -82,32 +82,32 @@
 				return this.show = !this.show
 			},
 			beforeEnter(el) {
-				console.log('beforeEnter', el);
+				console.log('beforeEnter');
 			},
 			enter(el, done) {
-				console.log('Enter', el);
+				console.log('Enter');
 				// We need to execute 'done' to tell VueJS that animation has been finished
 				done();
 			},
-			afterEnter() {
-
+			afterEnter(el) {
+				console.log('afterEnter');
 			},
-			enterCancelled() {
-
+			enterCancelled(el) {
+				console.log('enterCancelled');
 			},
 			beforeLeave(el) {
-				console.log('beforeEnter', el);
+				console.log('beforeLeave');
 			},
 			leave(el, done) {
-				console.log('Enter', el);
+				console.log('Leave');
 				// We need to execute 'done' to tell VueJS that animation has been finished
 				done();
 			},
-			afterLeave() {
-
+			afterLeave(el) {
+				console.log('afterLeave');
 			},
-			leaveCancelled() {
-
+			leaveCancelled(el) {
+				console.log('Leave cancelled');
 			}
 		}
 	}

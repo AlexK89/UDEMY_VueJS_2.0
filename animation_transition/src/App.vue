@@ -60,8 +60,8 @@
 					@leave="leave"
 					@after-leave="afterLeave"
 					@leave-cancelled="leaveCancelled"
-				>
-					<div style="width: 100px; height: 100px; background-color: #76ff7e" v-if="load"></div>
+					:css="false" >
+					<div style="width: 0; height: 100px; background-color: #76ff7e" v-if="load"></div>
 				</transition>
 			</div>
 		</div>
@@ -73,8 +73,9 @@
 		data() {
 			return {
 				show: true,
-				load: true,
-				animation: ''
+				load: false,
+				animation: '',
+				elementWidth: 0
 			}
 		},
 		methods: {
@@ -83,11 +84,23 @@
 			},
 			beforeEnter(el) {
 				console.log('beforeEnter');
+				this.elementWidth = 0;
+				el.style.width = this.elementWidth + 'px';
 			},
 			enter(el, done) {
 				console.log('Enter');
-				// We need to execute 'done' to tell VueJS that animation has been finished
-				done();
+				let round = 1;
+				let interval = setInterval(() => {
+					el.style.width = (this.elementWidth + round * 10) + 'px';
+					round++;
+					if (round > 30) {
+						console.log(el.style.width);
+						clearInterval(interval);
+						// We need to execute 'done' to tell VueJS that animation has been finished
+						done();
+					}
+				}, 20);
+
 			},
 			afterEnter(el) {
 				console.log('afterEnter');
@@ -97,11 +110,21 @@
 			},
 			beforeLeave(el) {
 				console.log('beforeLeave');
+				this.elementWidth = 300;
+				el.style.width = this.elementWidth + 'px';
 			},
 			leave(el, done) {
 				console.log('Leave');
-				// We need to execute 'done' to tell VueJS that animation has been finished
-				done();
+				let round = 1;
+				let interval = setInterval(() => {
+					el.style.width = (this.elementWidth - round * 10) + 'px';
+					round++;
+					if (round > 30) {
+						clearInterval(interval);
+						// We need to execute 'done' to tell VueJS that animation has been finished
+						done();
+					}
+				}, 20);
 			},
 			afterLeave(el) {
 				console.log('afterLeave');

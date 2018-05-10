@@ -63,19 +63,32 @@
 					:css="false" >
 					<div style="width: 0; height: 100px; background-color: #76ff7e" v-if="load"></div>
 				</transition>
+				<hr>
+				<button @click="selectedComponent === 'app-success' ? selectedComponent = 'app-danger' : selectedComponent = 'app-success'"
+						class="btn btn-primary">
+					Change selected component
+				</button>
+				<br><br>
+				<transition name="slide" mode="out-in">
+					<component :is="selectedComponent"></component>
+				</transition>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+	import Danger from './DangerAlert.vue';
+	import Success from './SuccessAlert.vue';
+
 	export default {
 		data() {
 			return {
 				show: true,
 				load: false,
 				animation: '',
-				elementWidth: 0
+				elementWidth: 0,
+				selectedComponent: 'app-success'
 			}
 		},
 		methods: {
@@ -132,6 +145,10 @@
 			leaveCancelled(el) {
 				console.log('Leave cancelled');
 			}
+		},
+		components: {
+			appDanger: Danger,
+			appSuccess: Success
 		}
 	}
 </script>

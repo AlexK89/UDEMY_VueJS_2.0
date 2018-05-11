@@ -74,6 +74,8 @@
 				</transition>
 				<hr>
 				<button class="btn btn-primary" @click="addItem">Add item</button>
+				<br>
+				<br>
 				<ul class="list-group">
 					<li class="list-group-item"
 						v-for="(number, index) in numbers"
@@ -157,10 +159,11 @@
 				console.log('Leave cancelled');
 			},
 			addItem() {
-
+				const position = Math.floor(Math.random() * this.numbers.length);
+				this.numbers.splice(position, 0, this.numbers.length + 1);
 			},
 			removeItem(index){
-
+				this.numbers.splice(index, 1);
 			}
 		},
 		components: {

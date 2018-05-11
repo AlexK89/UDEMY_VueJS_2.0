@@ -72,6 +72,16 @@
 				<transition name="slide" mode="out-in">
 					<component :is="selectedComponent"></component>
 				</transition>
+				<hr>
+				<button class="btn btn-primary" @click="addItem">Add item</button>
+				<ul class="list-group">
+					<li class="list-group-item"
+						v-for="(number, index) in numbers"
+						@click="removeItem(index)"
+						style="cursor: pointer">
+						{{ number }}
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -88,7 +98,8 @@
 				load: false,
 				animation: '',
 				elementWidth: 0,
-				selectedComponent: 'app-success'
+				selectedComponent: 'app-success',
+				numbers: [1,2,3,4,5,6,7]
 			}
 		},
 		methods: {
@@ -144,6 +155,12 @@
 			},
 			leaveCancelled(el) {
 				console.log('Leave cancelled');
+			},
+			addItem() {
+
+			},
+			removeItem(index){
+
 			}
 		},
 		components: {

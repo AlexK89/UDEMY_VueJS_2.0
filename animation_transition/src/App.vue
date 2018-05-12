@@ -14,11 +14,11 @@
 					<div class="alert alert-info" v-if="show">This is some info</div>
 				</transition>
 				<hr>
-                <button class="btn btn-primary" @click="switcher">Show alert</button>
+				<button class="btn btn-primary" @click="switcher">Show alert</button>
 				<br>
 				<br>
 				<!--<transition name="fade">-->
-					<!--<div class="alert alert-info" v-show="show">This is some info</div>-->
+				<!--<div class="alert alert-info" v-show="show">This is some info</div>-->
 				<!--</transition>-->
 				<transition name="slide">
 					<div class="alert alert-info" v-if="show">This is some info</div>
@@ -51,16 +51,16 @@
 				<br>
 				<br>
 				<transition
-					@before-enter="beforeEnter"
-					@enter="enter"
-					@after-enter="afterEnter"
-					@enter-cancelled="enterCancelled"
+						@before-enter="beforeEnter"
+						@enter="enter"
+						@after-enter="afterEnter"
+						@enter-cancelled="enterCancelled"
 
-					@before-leave="beforeLeave"
-					@leave="leave"
-					@after-leave="afterLeave"
-					@leave-cancelled="leaveCancelled"
-					:css="false" >
+						@before-leave="beforeLeave"
+						@leave="leave"
+						@after-leave="afterLeave"
+						@leave-cancelled="leaveCancelled"
+						:css="false">
 					<div style="width: 0; height: 100px; background-color: #76ff7e" v-if="load"></div>
 				</transition>
 				<hr>
@@ -76,13 +76,16 @@
 				<button class="btn btn-primary" @click="addItem">Add item</button>
 				<br>
 				<br>
-				<ul class="list-group">
-					<li class="list-group-item"
-						v-for="(number, index) in numbers"
-						@click="removeItem(index)"
-						style="cursor: pointer">
-						{{ number }}
-					</li>
+				<ul class="list-group" style="min-height: 400px;">
+					<transition-group name="slide">
+						<li class="list-group-item"
+							v-for="(number, index) in numbers"
+							@click="removeItem(index)"
+							style="cursor: pointer"
+							:key="number">
+							{{ number }}
+						</li>
+					</transition-group>
 				</ul>
 			</div>
 		</div>
@@ -101,7 +104,7 @@
 				animation: '',
 				elementWidth: 0,
 				selectedComponent: 'app-success',
-				numbers: [1,2,3,4,5,6,7]
+				numbers: [1, 2, 3, 4, 5]
 			}
 		},
 		methods: {
@@ -159,10 +162,9 @@
 				console.log('Leave cancelled');
 			},
 			addItem() {
-				const position = Math.floor(Math.random() * this.numbers.length);
-				this.numbers.splice(position, 0, this.numbers.length + 1);
+				this.numbers.unshift(this.numbers.length + 1);
 			},
-			removeItem(index){
+			removeItem(index) {
 				this.numbers.splice(index, 1);
 			}
 		},
@@ -175,8 +177,8 @@
 
 <style>
 	.fade-enter {
-		 opacity: 0;
-	 }
+		opacity: 0;
+	}
 
 	.fade-enter-active {
 		transition: .3s;
@@ -202,6 +204,7 @@
 			opacity: 1;
 		}
 	}
+
 	@keyframes slideOut {
 		0% {
 			transform: translateY(0);
@@ -212,6 +215,7 @@
 			opacity: 0;
 		}
 	}
+
 	.slide-enter {
 
 	}
@@ -226,5 +230,11 @@
 
 	.slide-leave-active {
 		animation: slideOut .7s forwards;
+		position: absolute;
+	}
+
+	/* '*-move' - this class is available for transition-group */
+	.slide-move {
+		transition: transform 1s;
 	}
 </style>

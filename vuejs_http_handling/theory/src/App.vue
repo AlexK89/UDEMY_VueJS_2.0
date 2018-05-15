@@ -29,7 +29,12 @@
 		},
 		methods: {
 			submitForm() {
-				console.log(this.user);
+				this.$http.post('https://vuejs-udemy-ca814.firebaseio.com/users.json', this.user)
+					.then(response => {
+						console.log(response);
+					}, error => {
+						console.log(error);
+					})
 			}
 		}
 	}

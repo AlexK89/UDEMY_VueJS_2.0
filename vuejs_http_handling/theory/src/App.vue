@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 				<h1>Http</h1>
-                <div class="form-group">
+				<div class="form-group">
 					<label for="name">User name</label>
 					<input type="text" class="form-control" id="name" v-model="user.userName">
 				</div>
@@ -13,10 +13,16 @@
 				</div>
 				<button class="btn btn-primary" @click="submitForm">Submit</button>
 				<hr>
+				<div class="form-group">
+					<label for="node">URL(alternative/users)</label>
+					<input type="text" class="form-control" id="node" v-model="node">
+				</div>
 				<button class="btn btn-primary" @click="fetchData">Get data</button>
 				<br><br>
 				<ul class="list-group">
-					<li class="list-group-item" v-for="user in users">Name: {{ user.userName }}, Email: {{user.userEmail}}</li>
+					<li class="list-group-item" v-for="user in users">Name: {{ user.userName }}, Email:
+						{{user.userEmail}}
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -32,7 +38,8 @@
 					userEmail: ''
 				},
 				users: [],
-				resources: {}
+				resources: {},
+				node: 'users'
 			}
 		},
 		methods: {
@@ -51,7 +58,21 @@
 				this.resources.saveAlternative(this.user);
 			},
 			fetchData() {
-				this.$http.get('users.json')
+				// this.$http.get('users.json')
+				// 	.then(response => {
+				// 		return response.json();
+				// 	})
+				// 	.then(data => {
+				// 		const usersDB = [];
+				//
+				// 		for (let key in data) {
+				// 			usersDB.push(data[key]);
+				// 		}
+				// 		this.users = usersDB;
+				// 	})
+
+				//Get data with dynamic URL
+				this.resources.getData({dynamic: this.node})
 					.then(response => {
 						return response.json();
 					})
@@ -70,9 +91,14 @@
 				saveAlternative: {
 					method: 'POST',
 					url: 'alternative.json'
+				},
+				getData: {
+					method: 'GET'
 				}
 			};
-			this.resources = this.$resource('users.json', {}, customActions);
+			// this.resources = this.$resource('users.json', {}, customActions);
+			//Dynamic url
+			this.resources = this.$resource('{dynamic}.json', {}, customActions);
 		}
 	}
 </script>

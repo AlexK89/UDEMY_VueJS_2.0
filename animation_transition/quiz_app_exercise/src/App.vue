@@ -69,7 +69,7 @@
 	.slide-enter-active {
 		animation: slideIn .5s forwards;
 	}
-	
+
 	.slide-leave-active {
 		animation: slideOut .5s forwards;
 	}

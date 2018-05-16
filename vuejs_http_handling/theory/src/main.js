@@ -14,7 +14,10 @@ Vue.http.interceptors.push((request, next) => {
 	if (request.method === 'POST') {
 		request.method = 'PUT';
 	}
-	next();
+	//convert native response object into readable one
+	next(response => {
+		response.json = () => {return {messages: response.body}}
+	});
 });
 
 new Vue({

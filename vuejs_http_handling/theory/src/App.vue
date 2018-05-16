@@ -45,7 +45,10 @@
 				// 	})
 
 				//WIth internal resource
-				this.resources.save({}, this.user);
+				// this.resources.save({}, this.user);
+
+				//Custom action
+				this.resources.saveAlternative(this.user);
 			},
 			fetchData() {
 				this.$http.get('users.json')
@@ -63,7 +66,13 @@
 			}
 		},
 		created() {
-			this.resources = this.$resource('users.json');
+			const customActions = {
+				saveAlternative: {
+					method: 'POST',
+					url: 'alternative.json'
+				}
+			};
+			this.resources = this.$resource('users.json', {}, customActions);
 		}
 	}
 </script>

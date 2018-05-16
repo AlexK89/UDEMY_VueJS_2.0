@@ -32,19 +32,23 @@
 					userEmail: ''
 				},
 				users: [],
+				resources: {}
 			}
 		},
 		methods: {
 			submitForm() {
-				this.$http.post('', this.user)
-					.then(response => {
-						console.log(response);
-					}, error => {
-						console.log(error);
-					})
+				// this.$http.post('', this.user)
+				// 	.then(response => {
+				// 		console.log(response);
+				// 	}, error => {
+				// 		console.log(error);
+				// 	})
+
+				//WIth internal resource
+				this.resources.save({}, this.user);
 			},
 			fetchData() {
-				this.$http.get('')
+				this.$http.get('users.json')
 					.then(response => {
 						return response.json();
 					})
@@ -57,6 +61,9 @@
 						this.users = usersDB;
 					})
 			}
+		},
+		created() {
+			this.resources = this.$resource('users.json');
 		}
 	}
 </script>

@@ -6,7 +6,10 @@ import App from './App.vue';
 Vue.use(VueResource);
 
 //Default URL for DB
-Vue.http.options.root = 'https://vuejs-udemy-ca814.firebaseio.com/users.json';
+// Vue.http.options.root = 'https://vuejs-udemy-ca814.firebaseio.com/users.json';
+
+//URL for DB with internal resources
+Vue.http.options.root = 'https://vuejs-udemy-ca814.firebaseio.com/';
 
 //Interceptors
 Vue.http.interceptors.push((request, next) => {

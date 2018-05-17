@@ -52,3 +52,6 @@ Module 15
 2. Some Code Recipes for vue-resource: https://github.com/yyx990803/vue-resource/blob/master/docs/recipes.md
 3. Template URLs: https://medialize.github.io/URI.js/uri-template.html
 4. Requests and Responses (incl. Different File Formats): https://github.com/yyx990803/vue-resource/blob/master/docs/http.md
+
+Module 16
+1. vue-router - https://router.vuejs.org/en/

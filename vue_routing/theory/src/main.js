@@ -8,7 +8,9 @@ Vue.use(Router);
 
 const router = new Router(
 	{
-		routes
+		routes,
+		// to not use # in url we need to add mode history
+		mode: 'history'
 	}
 );
 
@@ -16,4 +18,4 @@ new Vue({
 	el: '#app',
 	router,
 	render: h => h(App)
-})
+});

@@ -11,7 +11,3 @@
 		name: "Header"
 	}
 </script>
-
-<style scoped>
-
-</style>

@@ -3,5 +3,6 @@ import User from './components/user/User.vue';
 
 export const routes = [
 	{path: '', component: Home},
-	{path: '/user', component: User}
+	// :id makes us pass dynamic data
+	{path: '/user/:id', component: User}
 ];

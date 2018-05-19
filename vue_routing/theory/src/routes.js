@@ -5,12 +5,13 @@ import UserDetail from './components/user/UserDetail.vue';
 import UserEdit from './components/user/UserEdit.vue';
 
 export const routes = [
-	{path: '', component: Home},
+	{path: '', component: Home, name: 'home'},
 	// :id makes us pass dynamic data
 	//we use parameter children to pass for the components own routes
 	{path: '/user/', component: User, children: [
 			{ path: '', component: UserStart },
 			{ path: ':id', component: UserDetail },
-			{ path: ':id/edit', component: UserEdit },
+			//we can edit name property to make your code cleaner
+			{ path: ':id/edit', component: UserEdit, name: 'userEdit' },
 		]}
 ];

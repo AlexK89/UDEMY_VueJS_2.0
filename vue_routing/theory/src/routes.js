@@ -26,5 +26,8 @@ export const routes = [
 			'header-top': Header,
 			'header-bottom': Header
 		}
+	},
+	{
+		path: '/redirect-me', redirect: {name: 'home'}
 	}
 ];

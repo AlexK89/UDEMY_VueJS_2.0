@@ -14,6 +14,12 @@
 				id: this.$route.params.id
 			}
 		},
+		watch: {
+			// watcher for $route
+			'$route'(to, from) {
+				this.id = to.params.id;
+			}
+		},
 		methods: {
 			navigateHome() {
 				this.$router.push('/')

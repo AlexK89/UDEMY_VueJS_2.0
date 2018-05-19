@@ -23,7 +23,6 @@ export const routes = [
 		],
 		components: {
 			default: User,
-			'header-top': Header,
 			'header-bottom': Header
 		}
 	},

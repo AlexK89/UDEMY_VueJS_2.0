@@ -40,7 +40,7 @@ export const routes = [
 		components: {
 			default: User,
 			'header-bottom': Header
-		}
+		},
 	},
 	{
 		path: '/redirect-me',

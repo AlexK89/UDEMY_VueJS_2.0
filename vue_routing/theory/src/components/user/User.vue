@@ -25,6 +25,6 @@
 			navigateHome() {
 				this.$router.push({name: 'home'})
 			}
-		}
+		},
 	}
 </script>

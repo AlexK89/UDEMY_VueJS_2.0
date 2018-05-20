@@ -25,6 +25,14 @@ const router = new Router(
 	}
 );
 
+//to control user access to the component we use beforeEach
+router.beforeEach((to, from, next) => {
+	console.log('Global beforeEach');
+	next(); // continue a journey
+	// next(false); // stop a journey
+	// next({}); // pass specific route and redirect you
+});
+
 new Vue({
 	el: '#app',
 	router,

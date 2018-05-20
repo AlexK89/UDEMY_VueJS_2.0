@@ -25,6 +25,11 @@
 					hash: '#data'
 				}
 			}
+		},
+		//pre-build method
+		beforeRouteEnter(to, from, next) {
+			// let to go or block
+			(true) ? next() : next(false);
 		}
 	}
 </script>

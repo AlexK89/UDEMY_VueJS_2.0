@@ -7,7 +7,9 @@ import UserEdit from './components/user/UserEdit.vue';
 
 export const routes = [
 	{
-		path: '', name: 'home', components: {
+		path: '',
+		name: 'home',
+		components: {
 			default: Home,
 			'header-top': Header
 		}
@@ -15,11 +17,25 @@ export const routes = [
 	// :id makes us pass dynamic data
 	//we use parameter children to pass for the components own routes
 	{
-		path: '/user/', children: [
-			{path: '', component: UserStart},
-			{path: ':id', component: UserDetail},
+		path: '/user/',
+		children: [
+			{
+				path: '',
+				component: UserStart},
+			{
+				path: ':id',
+				component: UserDetail,
+				beforeEnter: (to, from, next) => {
+					console.log('Inside route setup | Children');
+					next();
+				}
+			},
 			//we can edit name property to make your code cleaner
-			{path: ':id/edit', component: UserEdit, name: 'userEdit'},
+			{
+				path: ':id/edit',
+				component: UserEdit,
+				name: 'userEdit'
+			},
 		],
 		components: {
 			default: User,
@@ -27,9 +43,15 @@ export const routes = [
 		}
 	},
 	{
-		path: '/redirect-me', redirect: {name: 'home'}
+		path: '/redirect-me',
+		redirect: {
+			name: 'home'
+		}
 	},
 	{
-		path: '*', redirect: {name: 'home'}
+		path: '*',
+		redirect: {
+			name: 'home'
+		}
 	}
 ];

@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<button class="btn btn-primary" @click="asyncIncrement">Increment</button>
-		<button class="btn btn-primary" @click="asyncDecrement">Decrement</button>
+		<button class="btn btn-primary" @click="asyncIncrement({by: 10, timeout: 1000})">Increment</button>
+		<button class="btn btn-primary" @click="asyncDecrement({by: 10, timeout: 1000})">Decrement</button>
 	</div>
 </template>
 
@@ -17,7 +17,7 @@
 			// ])
 			...mapActions([
 				'asyncIncrement',
-				'asyncDecrement',
+				'asyncDecrement'
 			])
 		}
 	}

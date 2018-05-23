@@ -57,3 +57,6 @@ Module 16
 1. vue-router - https://router.vuejs.org/en/
 2. vue-router Github Page: https://github.com/vuejs/vue-router
 3. Extract Route Params via "props" examples - https://github.com/vuejs/vue-router/tree/dev/examples/route-props
+
+Module 17
+1. Vuex - https://vuex.vuejs.org/

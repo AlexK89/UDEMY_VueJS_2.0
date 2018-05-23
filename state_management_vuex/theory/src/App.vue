@@ -11,6 +11,12 @@
 				<hr>
 				<p>Another counter</p>
 				<app-another-counter></app-another-counter>
+				<hr>
+				<!--Two way binding-->
+				<!--<input type="text" placeholder="Put a value" :value="values" @input="updateValue">-->
+				<!--Two way binding shorter method-->
+				<input type="text" placeholder="Put a value" v-model="values">
+				<p>Value is: {{values}}</p>
 			</div>
 		</div>
 	</div>
@@ -23,6 +29,25 @@
 	import AnotherResult from './components/AnotherResult.vue';
 
 	export default {
+		computed: {
+			// values() {
+			// 	return this.$store.getters.value;
+			// }
+			values: {
+				get() {
+					return this.$store.getters.value;
+				},
+				//Setter
+				set(value) {
+					this.$store.dispatch('updateValue', value);
+				}
+			}
+		},
+		methods: {
+			// updateValue(event) {
+			// 	this.$store.dispatch('updateValues', event.target.value);
+			// }
+		},
 		components: {
 			appCounter: Counter,
 			appResult: Result,

@@ -22,5 +22,24 @@ export const store = new Vuex.Store({
 		decrement: state => {
 			state.counter--;
 		}
+	},
+	//actions - is to make our mutations work async
+	actions: {
+		increment: context => {
+			context.commit('increment');
+		},
+		decrement: context => {
+			context.commit('decrement');
+		},
+		asyncIncrement: context => {
+			context.commit(setTimeout(() => {
+				context.commit('increment');
+			}, 2000))
+		},
+		asyncDecrement: context => {
+			context.commit(setTimeout(() => {
+				context.commit('decrement');
+			}, 2000))
+		}
 	}
 });

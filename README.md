@@ -60,3 +60,4 @@ Module 16
 
 Module 17
 1. Vuex - https://vuex.vuejs.org/
+2. Auto namespacing for Vuex 2.1 and newer - https://github.com/vuejs/vuex/releases/tag/v2.1.0

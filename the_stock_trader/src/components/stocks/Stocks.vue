@@ -2,7 +2,7 @@
 	<div class="page">
 		<app-header></app-header>
 		<h1>Stocks component</h1>
-		<app-stock v-for="stock in stocks"></app-stock>
+		<app-stock v-for="stock in stocks" :stock="stock"></app-stock>
 	</div>
 </template>
 

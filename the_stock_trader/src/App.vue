@@ -10,5 +10,7 @@
 </script>
 
 <style>
-
+	.page {
+		padding-top: 30px;
+	}
 </style>

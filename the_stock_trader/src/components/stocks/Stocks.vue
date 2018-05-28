@@ -1,10 +1,18 @@
 <template>
-	<h1>Stocks component</h1>
+	<div class="page">
+		<app-header></app-header>
+		<h1>Stocks component</h1>
+	</div>
 </template>
 
 <script>
+	import Header from '../Header.vue';
+
 	export default {
-		name: "Stocks"
+		name: "Stocks",
+		components: {
+			appHeader: Header
+		}
 	}
 </script>
 

@@ -61,3 +61,15 @@ Module 16
 Module 17
 1. Vuex - https://vuex.vuejs.org/
 2. Auto namespacing for Vuex 2.1 and newer - https://github.com/vuejs/vuex/releases/tag/v2.1.0
+3. Vue Developer Tools - https://github.com/vuejs/vue-devtools
+
+Module 22
+1. Axios: https://github.com/axios/axios
+
+Module 23
+1. JSON Web Token - https://jwt.io/
+2. Firebase Auth REST API Docs: https://firebase.google.com/docs/reference/rest/auth/
+3. Authenticating Requests to the Firebase Database REST Endpoints: https://firebase.google.com/docs/database/rest/auth
+
+Module 24 
+1. Vuelidate Docs: https://monterail.github.io/vuelidate/

@@ -6,7 +6,7 @@ const state = {
 const mutations = {
 	// stockId, quantity, stockPrice - comes from order
 	'BUY_STOCK'(state, {stockId, quantity, stockPrice}) {
-		const record = state.stocks.find(element => element.id === stock.id);
+		const record = state.stocks.find(element => element.id === stockId);
 		if (record) {
 			record.quantity += quantity;
 		} else {
@@ -18,9 +18,9 @@ const mutations = {
 		state.funds -= stockPrice * quantity;
 	},
 	'SELL_STOCK'(state, {stockId, quantity, stockPrice}) {
-		const record = state.stocks.find(element => element.id === stock.id);
+		const record = state.stocks.find(element => element.id === stockId);
 
-		if (record.quantity >= quantity) {
+		if (record.quantity > quantity) {
 			record.quantity -= quantity;
 		} else {
 			state.stocks.splice(state.stocks.indexOf(record), 1);
@@ -32,7 +32,7 @@ const mutations = {
 
 const actions = {
 	sellStock({commit}, order) {
-		commit('SEL_STOCK', order);
+		commit('SELL_STOCK', order);
 	}
 };
 

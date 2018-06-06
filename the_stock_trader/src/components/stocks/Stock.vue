@@ -13,13 +13,14 @@
 							type="number"
 							class="form-control"
 							placeholder="Quantity"
-							v-model.number="quantity">
+							v-model.number="quantity"
+							:class="{danger: insufficientBalance}">
 				</div>
 				<div class="pull-right">
 					<button
 					class="btn btn-success"
 					@click="buyStock"
-					:disabled="quantity <= 0 || !Number.isInteger(quantity)">
+					:disabled="insufficientBalance || quantity <= 0 || !Number.isInteger(quantity)">
 						Buy
 					</button>
 				</div>
@@ -37,6 +38,14 @@
 				quantity: 0
 			}
 		},
+		computed: {
+			funds() {
+				return this.$store.getters.funds;
+			},
+			insufficientBalance() {
+				return this.quantity * this.stock.price > this.funds;
+			}
+		},
 		methods: {
 			buyStock() {
 				const order = {
@@ -45,14 +54,18 @@
 					stockPrice: this.stock.price,
 					quantity: this.quantity
 				};
-				
-				this.$store.dispatch('buyStock', order);
-				this.quantity = 0;
+
+				if (!this.insufficientBalance) {
+					this.$store.dispatch('buyStock', order);
+					this.quantity = 0;
+				}
 			}
 		}
 	}
 </script>
 
 <style scoped>
-
+	.danger {
+		border: 1px solid #f00;
+	}
 </style>

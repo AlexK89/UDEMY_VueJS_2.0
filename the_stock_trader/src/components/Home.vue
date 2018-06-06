@@ -1,7 +1,11 @@
 <template>
 	<div class="page">
 		<app-header></app-header>
-		<h1>Home component</h1>
+		<h1>Trade or view your profile</h1>
+		<h6>Save&Load your data</h6>
+		<h6>Click 'End Day' to begin a new day</h6>
+		<hr>
+		<p>Your funds is: {{ funds }}</p>
 	</div>
 </template>
 
@@ -12,6 +16,11 @@
 		name: "Home",
 		components: {
 			appHeader: Header
+		},
+		computed: {
+			funds() {
+				return this.$store.getters.funds;
+			}
 		}
 	}
 </script>

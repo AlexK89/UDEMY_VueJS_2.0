@@ -12,7 +12,7 @@
 					<router-link to="/portfolio" active-class="active" tag="li"><a>Portfolio</a></router-link>
 					<router-link to="/stocks" active-class="active" tag="li"><a>Stocks</a></router-link>
 				</ul>
-				<strong class="navbar-text navbar-right">Funds: {{funds}}</strong>
+				<strong class="navbar-text navbar-right">Funds: {{funds | currency}}</strong>
 				<ul class="nav navbar-nav navbar-right">
 					<router-link to="/" tag="li"><a>End Day</a></router-link>
 					<li class="dropdown">

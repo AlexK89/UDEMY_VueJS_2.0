@@ -21,6 +21,6 @@
 			funds() {
 				return this.$store.getters.funds;
 			}
-		}
+		},
 	}
 </script>

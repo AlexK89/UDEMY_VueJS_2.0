@@ -15,14 +15,14 @@
 				<strong class="navbar-text navbar-right">Funds: {{funds | currency}}</strong>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a @click="endDay">End Day</a></li>
-					<li class="dropdown">
+					<li class="dropdown" :class="{open: isDropdownOpen}">
 						<a
-								href="#"
 								class="dropdown-toggle"
 								data-toggle="dropdown"
 								role="button"
 								aria-haspopup="true"
-								aria-expanded="false">
+								aria-expanded="false"
+								@click="isDropdownOpen = !isDropdownOpen">
 									Save & Load <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
@@ -41,6 +41,11 @@
 
 	export default {
 		name: "Header",
+		data() {
+			return {
+				isDropdownOpen: false
+			}
+		},
 		computed: {
 			funds() {
 				return this.$store.getters.funds;

@@ -8,8 +8,10 @@ const mutations = {
 	'SET_STOCKS'(state, stocks) {
 		state.stocks = stocks;
 	},
-	'RMD_STOCK'(state) {
-
+	'RMD_STOCKS'(state) {
+		state.stocks.map(stock => {
+			stock.price = Math.round(stock.price * (1 + Math.random() - 0.5) + 2);
+		})
 	}
 };
 

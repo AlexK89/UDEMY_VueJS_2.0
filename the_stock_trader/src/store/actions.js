@@ -1,7 +1,7 @@
 import Vue from 'vue';
 
-export const loadData = ({comit}) => {
-	Vue.$http.get('data.json')
+export const loadData = ({commit}) => {
+	Vue.http.get('data.json')
 		.then(response => response.json())
 		.then(data => {
 			if (data) {

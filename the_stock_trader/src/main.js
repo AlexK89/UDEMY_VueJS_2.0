@@ -9,6 +9,9 @@ import store from "./store/store.js";
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
+// after adding vue-resource we can use vue.http
+Vue.http.options.root = 'https://vuejs-stock-trader-eb453.firebaseio.com/';
+
 Vue.filter('currency', value => {
 	return `$ ${value.toLocaleString()}`
 });
